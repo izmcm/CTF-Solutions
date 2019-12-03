@@ -15,10 +15,10 @@ bin      dev   initrd.img      lib32   lost+found  opt         root  share  tmp 
 boot     etc   initrd.img.old  lib64   media       proc        run   srv    usr  vmlinuz.old
 cgroup2  home  lib             libx32  mnt         README.txt  sbin  sys    var
 ```
-**find**
-owned by user bandit7
-owned by group bandit6
-33 bytes in size
+**find**  
+owned by user bandit7  
+owned by group bandit6  
+33 bytes in size  
 
 ```
 bandit6@bandit:/$ find . -size 33c -user bandit7 -group bandit6
