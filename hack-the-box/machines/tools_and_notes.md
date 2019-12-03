@@ -1,10 +1,8 @@
 ### Tools
 
-* nmap [IP]
-
-* dirb [site]
-
-* nikto -h [IP]
+* nmap: port scanner
+* dirb: web content scanner
+* nikto: web server scanner
 
 ### Notes
-* LFTP: FTP port open: You can connect with Anonymous@IP in 21 port
+* LFTP: If FTP port is open, you can connect with Anonymous@IP in 21 port
