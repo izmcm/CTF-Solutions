@@ -40,4 +40,5 @@ Difficult: Easy
 * [Level 3 -> 4](https://github.com/izmcm/hacking-studies/blob/master/over-the-wire/bandit/level3to4.md)
 * [Level 4 -> 5](https://github.com/izmcm/hacking-studies/blob/master/over-the-wire/bandit/level4to5.md)
 * [Level 5 -> 6](https://github.com/izmcm/hacking-studies/blob/master/over-the-wire/bandit/level5to6.md)
+* [Level 6 -> 7](https://github.com/izmcm/hacking-studies/blob/master/over-the-wire/bandit/level6to7.md)
 
