@@ -1,7 +1,5 @@
 # Hacking Studies
 
-## About
-
 Walkthrough of my personal cybersecurity studies 
 
 ## Table of contents
