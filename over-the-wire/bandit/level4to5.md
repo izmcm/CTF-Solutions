@@ -11,9 +11,11 @@ inhere
 bandit4@bandit:~$ cd inhere/
 bandit4@bandit:~/inhere$ ls
 -file00  -file01  -file02  -file03  -file04  -file05  -file06  -file07  -file08  -file09
+```
 
-[testing...]
+testing files...
 
+```
 bandit4@bandit:~/inhere$ cat ./-file07
 koReBOKuIDDepwhWk7jZC0RTdopnAYKh
 ```
