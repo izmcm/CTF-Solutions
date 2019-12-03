@@ -5,12 +5,22 @@ $ ssh bandit6@bandit.labs.overthewire.org -p 2220
 This is a OverTheWire game server. More information on http://www.overthewire.org/wargames
 
 bandit6@bandit.labs.overthewire.org's password: DXjZPULLxYr17uwoI01bNLQbtFemEgo7
+```
 
+**somewhere on the server**
+```
 bandit6@bandit:~$ cd ../../
 bandit6@bandit:/$ ls
 bin      dev   initrd.img      lib32   lost+found  opt         root  share  tmp  vmlinuz
 boot     etc   initrd.img.old  lib64   media       proc        run   srv    usr  vmlinuz.old
 cgroup2  home  lib             libx32  mnt         README.txt  sbin  sys    var
+```
+**find**
+owned by user bandit7
+owned by group bandit6
+33 bytes in size
+
+```
 bandit6@bandit:/$ find . -size 33c -user bandit7 -group bandit6
 find: ‘./run/lvm’: Permission denied
 find: ‘./run/screen/S-bandit0’: Permission denied
@@ -50,7 +60,7 @@ find: ‘./var/log’: Permission denied
 find: ‘./var/tmp’: Permission denied
 find: ‘./var/cache/ldconfig’: Permission denied
 find: ‘./var/cache/apt/archives/partial’: Permission denied
-**./var/lib/dpkg/info/bandit7.password**
+./var/lib/dpkg/info/bandit7.password
 find: ‘./var/lib/apt/lists/partial’: Permission denied
 find: ‘./var/lib/polkit-1’: Permission denied
 find: ‘./cgroup2/csessions’: Permission denied
@@ -74,6 +84,10 @@ find: ‘./proc/14674/task/14674/fdinfo/6’: No such file or directory
 find: ‘./proc/14674/fd/5’: No such file or directory
 find: ‘./proc/14674/fdinfo/5’: No such file or directory
 find: ‘./boot/lost+found’: Permission denied
+```
+**File: ./var/lib/dpkg/info/bandit7.password**
+
+```
 bandit6@bandit:/$ cat ./var/lib/dpkg/info/bandit7.password
 HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs
 ```
