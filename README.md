@@ -5,8 +5,6 @@ Walkthrough of my personal cybersecurity studies
 ## Table of contents
 
 * [Sites](#sites)
-* [Tools](#tools)
-* [Notes](#notes)
 * [Walkthrough](#walkthrough)
   * [Hack the Box](#hack-the-box)
     * [Machines](#machines)
@@ -16,14 +14,6 @@ Walkthrough of my personal cybersecurity studies
 ## Sites
 * [Hack The Box](https://www.hackthebox.eu/)
 * [OverTheWire/Bandit](https://overthewire.org/wargames/bandit/)
-
-## Tools
-* nmap: port scanner
-* dirb: web content scanner
-* nikto: web server scanner
-
-## Notes
-* LFTP: If FTP port is open, you can connect with Anonymous@IP in 21 port
 
 ## Walkthrough
 ### Hack The Box
