@@ -1,0 +1,21 @@
+### Goal
+
+The password for the next level is stored in the file data.txt, which contains base64 encoded data
+
+### Walkthrough
+
+```
+izabellamelo@10-48-48-11 ~ % ssh bandit10@bandit.labs.overthewire.org -p 2220
+This is a OverTheWire game server. More information on http://www.overthewire.org/wargames
+
+bandit10@bandit.labs.overthewire.org's password: truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk
+
+bandit10@bandit:~$ ls
+data.txt
+
+bandit10@bandit:~$ strings data.txt | base64 --decode
+The password is IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR
+
+```
+
+FLAG -> IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR
