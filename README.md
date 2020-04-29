@@ -13,7 +13,7 @@ Walkthrough of my personal cybersecurity studies
 
 ## Sites
 * [Hack The Box](https://www.hackthebox.eu/)
-* [OverTheWire/Bandit](https://overthewire.org/wargames/bandit/)
+* [OverTheWire](https://overthewire.org/wargames/)
 
 ## Walkthrough
 ### Hack The Box
