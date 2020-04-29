@@ -121,9 +121,9 @@ Password: PrTg@dmin2019
 
 7. Com o login de administrador aceito, vamos tentar executar um programa no servidor a partir da central de notificações do site:
 
-Setup -> Notifications -> Edit Notifications -> Execute Program 
+* Setup -> Notifications -> Edit Notifications -> Execute Program 
 
-Run command in powershell:
+* Run command in powershell:
 * Demo exe notification - outfile.ps1
 
 No parâmetro, colocaremos um código para copiar o arquivo _root.txt_ do diretório _Administrator_ que não possuimos acesso quando entramos como anônimos no FTP para um diretório no qual possuímos acesso:
