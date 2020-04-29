@@ -8,7 +8,7 @@
 
 ## Hack The Box
 ### Machines
-* [NETMON](hack-the-box/machines/NETMON/doc.md)   
+* [NETMON](hack-the-box/machines/NETMON.md)   
 Sistema Operacional: Windows  
 Dificuldade: Fácil
 
